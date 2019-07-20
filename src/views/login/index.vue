@@ -47,27 +47,17 @@
           </span>
         </el-form-item>
       </el-tooltip>
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <el-button :loading="loading" type="primary" style="width:100%;" @click.native.prevent="handleLogin">
+            {{ $t('login.logIn') }}
+          </el-button>
+        </el-col>
+        <el-col :span="12">
+          <el-button type="primary" style="width:100%;" @click.native.prevent="handleLogin">注册</el-button>
+        </el-col>
+      </el-row>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">
-        {{ $t('login.logIn') }}
-      </el-button>
-
-      <div style="position:relative">
-        <div class="tips">
-          <span>{{ $t('login.username') }} : admin</span>
-          <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
-        </div>
-        <div class="tips">
-          <span style="margin-right:18px;">
-            {{ $t('login.username') }} : editor
-          </span>
-          <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
-        </div>
-
-        <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
-          {{ $t('login.thirdparty') }}
-        </el-button>
-      </div>
     </el-form>
 
     <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog">
@@ -168,6 +158,26 @@ export default {
         this.$refs.password.focus()
       })
     },
+
+    handleRegister() {
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.loading = true
+          this.$store.dispatch('user/login', this.loginForm)
+            .then(() => {
+              this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+              this.loading = false
+            })
+            .catch(() => {
+              this.loading = false
+            })
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
