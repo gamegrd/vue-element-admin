@@ -99,7 +99,9 @@ export default {
     thirdpartyTips: '本地不能模拟，请结合自己业务进行模拟！！！'
   },
   user: {
-    name: '账号'
+    name: '账号',
+    level: '级别',
+    is_active: '激活'
   },
   documentation: {
     documentation: '文档',

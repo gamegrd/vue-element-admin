@@ -40,29 +40,29 @@
           <span>{{ scope.row.id }}</span>
         </template>
       </el-table-column>
-      <el-table-column :label="$t('table.level')" min-width="150px">
-        <template slot-scope="{row}">
-          <span class="link-type" @click="handleUpdate(row)">{{ row.level }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column :label="$t('user.name')" width="110px" align="center">
+      <el-table-column :label="$t('user.name')" width="130px" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.user.username }}</span>
         </template>
       </el-table-column>
-      <el-table-column :label="$t('table.date')" width="150px" align="center">
+      <el-table-column :label="$t('user.level')" width="50px" align="center">
+        <template slot-scope="{row}">
+          {{ row.level }}
+        </template>
+      </el-table-column>
+      <el-table-column :label="$t('table.date')" width="200px" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.user.date_joined }}</span>
         </template>
       </el-table-column>
-      <el-table-column :label="$t('table.is_active')" class-name="status-col" width="100">
+      <el-table-column :label="$t('user.is_active')" class-name="status-col" width="100">
         <template slot-scope="{row}">
-          <el-tag :type="row.is_active | activeFilter">
-            {{ row.is_active }}
+          <el-tag :type="row.user.is_active | activeFilter ">
+            {{ row.user.is_active | boolFilter }}
           </el-tag>
         </template>
       </el-table-column>
-      <el-table-column :label="$t('table.actions')" align="center" width="230" class-name="small-padding fixed-width">
+      <el-table-column :label="$t('table.actions')" align="center" width="330" class-name="small-padding fixed-width">
         <template slot-scope="{row}">
           <el-button type="primary" size="mini" @click="handleUpdate(row)">
             {{ $t('table.edit') }}
@@ -155,13 +155,19 @@ export default {
   filters: {
     activeFilter(active) {
       const activeMap = {
-        true: '激活',
-        false: '禁用'
+        'true': 'success',
+        'false': 'danger'
       }
       return activeMap[active]
     },
     typeFilter(type) {
       return calendarTypeKeyValue[type]
+    },
+    boolFilter(active) {
+      if (active) {
+        return '已激活'
+      }
+      return '未激活'
     }
   },
   data() {
@@ -181,7 +187,7 @@ export default {
       importanceOptions: [1, 2, 3],
       calendarTypeOptions,
       sortOptions: [{ label: 'ID倒序', key: 'id' }, { label: 'ID Descending', key: '-id' }],
-      statusOptions: ['published', 'draft', 'deleted'],
+      statusOptions: ['true', 'false'],
       showReviewer: false,
       temp: {
         id: undefined,
