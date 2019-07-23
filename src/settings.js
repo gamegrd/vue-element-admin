@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Vue Element Admin',
+  title: '自由石匠-专业互助平台',
 
   /**
    * @type {boolean} true | false

@@ -72,6 +72,23 @@ export default {
     theme: '换肤',
     size: '布局大小'
   },
+  register: {
+    title: '用户注册',
+    logIn: '注册',
+    username: '账号',
+    password: '密码',
+    qq: 'QQ',
+    wechat: '微信',
+    province: '省份',
+    paymentchannel: '请选择 支付渠道',
+    paymentnumber: '支付帐号',
+    paymentusername: '支付用户名',
+    realname: '真实姓名',
+    invitecode: '邀请码',
+    register: '点击注册',
+    login: '直接登陆',
+    nickname: '昵称'
+  },
   login: {
     title: '系统登录',
     logIn: '登录',
@@ -80,6 +97,9 @@ export default {
     any: '随便填',
     thirdparty: '第三方登录',
     thirdpartyTips: '本地不能模拟，请结合自己业务进行模拟！！！'
+  },
+  user: {
+    name: '账号'
   },
   documentation: {
     documentation: '文档',

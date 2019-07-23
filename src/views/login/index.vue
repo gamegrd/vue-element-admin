@@ -54,7 +54,7 @@
           </el-button>
         </el-col>
         <el-col :span="12">
-          <el-button type="primary" style="width:100%;" @click.native.prevent="handleLogin">注册</el-button>
+          <el-button type="primary" style="width:100%;" @click.native.prevent="handleRegister">注册</el-button>
         </el-col>
       </el-row>
 
@@ -95,8 +95,8 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: '111111'
+        username: '',
+        password: ''
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -160,22 +160,8 @@ export default {
     },
 
     handleRegister() {
-      this.$refs.loginForm.validate(valid => {
-        if (valid) {
-          this.loading = true
-          this.$store.dispatch('user/login', this.loginForm)
-            .then(() => {
-              this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
-              this.loading = false
-            })
-            .catch(() => {
-              this.loading = false
-            })
-        } else {
-          console.log('error submit!!')
-          return false
-        }
-      })
+      this.$router.push({ path: '/register' })
+      return true
     },
 
     handleLogin() {
