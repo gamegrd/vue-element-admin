@@ -6,7 +6,7 @@
 
     <div class="app-container">
       <div class="filter-container">
-        <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-refresh" @click="handleRefresh">
+        <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-refresh:" @click="handleRefresh">
           {{ $t('tagsView.refresh') }}
         </el-button>
       </div>
