@@ -76,7 +76,7 @@ service.interceptors.response.use(
   },
   // 200之外的其它都会来这
   error => {
-    console.log('err' + error) // for debug
+    console.log('err:' + error) // for debug
     Message({
       message: error.message,
       type: 'error',

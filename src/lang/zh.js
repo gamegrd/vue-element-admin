@@ -63,9 +63,11 @@ export default {
     i18n: '国际化',
     externalLink: '外链',
     agent: '邀请号商',
-    agentlist: '代理列表',
+    agentlist: '代理商列表',
     brokerage: 'API发布佣金设置',
     setting: '设置',
+    order: '定单',
+    orderguide: '定单指导价',
     profile: '个人中心'
   },
   navbar: {

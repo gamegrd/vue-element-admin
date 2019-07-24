@@ -74,10 +74,10 @@ export default {
       this.listLoading = true
       getSetting(this.listQuery).then(response => {
         this.brokerageForm.award = response.data.award
-        // Just to simulate the time of the request
-        setTimeout(() => {
-          this.listLoading = false
-        }, 1.5 * 1000)
+        this.listLoading = false
+      }).catch(function(error) {
+        console.log(error)
+        this.listLoading = false
       })
     },
     submitForm(formName) {
@@ -91,16 +91,13 @@ export default {
               message: '设置成功',
               type: 'success'
             })
-            // Just to simulate the time of the request
-            setTimeout(() => {
-              this.listLoading = false
-            }, 1.5 * 1000)
           })
         } else {
           this.$message({
             message: '设置失败',
             type: 'error'
           })
+          this.listLoading = false
           return false
         }
       })
