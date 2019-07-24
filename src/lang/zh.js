@@ -62,6 +62,10 @@ export default {
     clipboardDemo: 'Clipboard',
     i18n: '国际化',
     externalLink: '外链',
+    agent: '邀请号商',
+    agentlist: '代理列表',
+    brokerage: 'API发布佣金设置',
+    setting: '设置',
     profile: '个人中心'
   },
   navbar: {
@@ -101,6 +105,7 @@ export default {
   user: {
     name: '账号',
     level: '级别',
+    sharecode: '邀请码',
     is_active: '激活'
   },
   documentation: {

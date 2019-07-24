@@ -11,6 +11,7 @@ import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
+import settingRouter from './modules/setting'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -141,8 +142,8 @@ export const asyncRoutes = [
     alwaysShow: true, // will always show the root menu
     name: 'Permission',
     meta: {
-      title: '我的代理',
-      icon: 'lock',
+      title: 'agent',
+      icon: 'peoples',
       roles: ['admin', 'employer'] // you can set roles in root nav
     },
     children: [
@@ -151,12 +152,13 @@ export const asyncRoutes = [
         component: () => import('@/views/agent/index'),
         name: 'agentlist',
         meta: {
-          title: '代理列表',
+          title: 'agentlist',
           roles: ['employer'] // or you can only set roles in sub nav
         }
       }
     ]
   },
+  settingRouter,
   //  {
   //    path: '/permission',
   //    component: Layout,

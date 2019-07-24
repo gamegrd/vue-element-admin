@@ -30,6 +30,29 @@ export function logout() {
   })
 }
 
+export function getParent(token) {
+  return request({
+    url: '/user/Parent/',
+    method: 'get'
+  })
+}
+
+// http://127.0.0.1:7087/cgi_din/api/v1/user/Setting/?key=award
+export function getSetting(query) {
+  return request({
+    url: '/user/Setting/',
+    method: 'get',
+    params: query
+  })
+}
+
+export function setSetting(data) {
+  return request({
+    url: '/user/Setting/',
+    method: 'post',
+    data
+  })
+}
 export function getChildren(query) {
   return request({
     url: '/user/Parent/children/',
