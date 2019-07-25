@@ -214,3 +214,58 @@ Modern browsers and Internet Explorer 10+.
 [MIT](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
 
 Copyright (c) 2017-present PanJiaChen
+
+
+{
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": false,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": false,
+    "vim.insertModeKeyBindings": [
+        {
+        "before": ["k", "j"],
+        "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before":["<leader>","p"],
+          "commands" :[
+            "workbench.action.quickOpen"
+          ]
+        }
+      ],
+   "vim.leader": "<space>",
+    "editor.lineNumbers": "relative",
+    "editor.renderControlCharacters": true,
+    "git.ignoreMissingGitWarning": true,
+    "editor.renderWhitespace": "all",
+    "go.useLanguageServer": true,
+    "git.confirmSync": false,
+    "python.jediEnabled": false,
+    "workbench.sideBar.location": "left",
+    "terminal.integrated.rendererType": "dom",
+    "eslint.packageManager": "yarn",
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+    "vim.camelCaseMotion.enable": true,
+    "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.history": 100,
+    "eslint.autoFixOnSave": true,
+    // 用来配置作用的文件类型
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "html",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        }
+    ]
+}
