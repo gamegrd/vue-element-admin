@@ -160,7 +160,7 @@ export default {
     },
 
     handleRegister() {
-      this.$router.push({ path: '/register' })
+      this.$router.push({ path: '/register', query: this.otherQuery })
       return true
     },
 

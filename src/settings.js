@@ -1,5 +1,5 @@
 module.exports = {
-  title: '自由石匠-专业互助平台',
+  title: '易扫而过-专业互助平台',
 
   /**
    * @type {boolean} true | false

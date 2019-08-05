@@ -81,8 +81,9 @@ export default {
   register: {
     title: '用户注册',
     logIn: '注册',
-    username: '账号',
+    username: '手机号',
     password: '密码',
+    repassword: '再输入一次密码',
     qq: 'QQ',
     wechat: '微信',
     province: '省份',
