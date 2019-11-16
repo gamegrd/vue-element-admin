@@ -97,7 +97,7 @@
       <el-row :gutter="20">
         <div class="app-download">
           <el-col :span="12">
-            <a class="iphone" href="https://abobov.cn/E0Zx2m"><span />iOS版下载</a>
+            <a class="iphone" href="https://dw.pub/5LP4"><span />iOS版下载</a>
           </el-col>
           <el-col :span="12">
             <a class="android" href="/down/app-release.apk" target="_blank"> <span />安卓版下载 </a>
